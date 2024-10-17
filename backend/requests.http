@@ -1,0 +1,33 @@
+
+GET http://localhost:8000/api/v1/health
+
+###
+
+POST http://localhost:8000/api/v1/artwork
+Content-Type: application/json
+
+{
+    "title": "Image 7",
+    "description": "Description 7"
+}
+
+###
+
+GET http://localhost:8000/api/v1/artwork
+
+###
+
+GET http://localhost:8000/api/v1/artwork/f12f900c-1459-4694-abea-d9709951d96f
+
+###
+
+DELETE http://localhost:8000/api/v1/artwork/98afe6e3-ea0b-4d92-a504-0fc44f5e4584
+
+###
+
+PATCH http://localhost:8000/api/v1/artwork/08b7a0fe-fa30-46df-b10b-feb089f7fc25
+Content-Type: application/json
+
+{
+    "title": "Title Updated Second Time"
+}
