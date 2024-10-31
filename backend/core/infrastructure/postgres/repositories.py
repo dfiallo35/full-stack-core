@@ -49,48 +49,52 @@ class IBaseRepository(ABC):
     async def get_items(self, results):
         return [item for (item,) in results]
 
+
+class ICreateRepository(IBaseRepository):
     @abstractmethod
     async def create(self):
         raise NotImplementedError()
 
-    @abstractmethod
-    async def list(self):
-        raise NotImplementedError()
 
+class IUpdateRepository(IBaseRepository):
     @abstractmethod
     async def update(self):
         raise NotImplementedError()
 
+
+class IDeleteRepository(IBaseRepository):
     @abstractmethod
     async def delete(self):
         raise NotImplementedError()
-    
+
+
+class IPaginateRepository(IBaseRepository):
+    @abstractmethod
+    async def paginate(self):
+        raise NotImplementedError()
+
+
+class IGetRepository(IBaseRepository):
     @abstractmethod
     async def get(self):
         raise NotImplementedError()
 
 
-class BaseRepository(IBaseRepository):
+class IListRepository(IBaseRepository):
+    @abstractmethod
+    async def list(self):
+        raise NotImplementedError()
+
+
+class CreateRepository(ICreateRepository):
     async def create(self, table_entity: BaseTable):
         async with self.db.async_session() as session:
             async with session.begin():
                 session.add(table_entity)
                 return table_entity
-
-    async def list(self, filter_query: IBaseFilter):
-        conditions = await self.get_conditions(filter_query)
-        query = await self.build_query(conditions)
-        results = await self.execute_query(query)
-        return await self.get_items(results)
     
-    # TODO: Fix adding pagination class, total, page and size info
-    async def paginate(self, filter_query: IPaginationBaseFilter):
-        conditions = await self.get_conditions(filter_query)
-        query = await self.build_query(conditions)
-        query = query.limit(filter_query.limit).offset(filter_query.offset)
-        results = await self.execute_query(query)
-        return await self.get_items(results)
 
+class UpdateRepository(IUpdateRepository):
     async def update(self, id: str, changes: Dict):
         async with self.db.async_session() as session:
             async with session.begin():
@@ -103,13 +107,27 @@ class BaseRepository(IBaseRepository):
                     return items[0]
                 return None
 
+
+class DeleteRepository(IDeleteRepository):
     async def delete(self, id: str):
         async with self.db.async_session() as session:
             async with session.begin():
                 query = delete(self.table_class).where(self.table_class.id == id)
                 await self.execute_query(query)
             return True
-    
+
+
+class PaginateRepository(IPaginateRepository):
+    # TODO: Fix adding pagination class, total, page and size info
+    async def paginate(self, filter_query: IPaginationBaseFilter):
+        conditions = await self.get_conditions(filter_query)
+        query = await self.build_query(conditions)
+        query = query.limit(filter_query.limit).offset(filter_query.offset)
+        results = await self.execute_query(query)
+        return await self.get_items(results)
+
+
+class GetRepository(IGetRepository):
     async def get(self, id: str):
         query = select(self.table_class).where(self.table_class.id == id)
         results = await self.execute_query(query)
@@ -117,3 +135,11 @@ class BaseRepository(IBaseRepository):
         if items:
             return items[0]
         return None
+
+
+class ListRepository(IListRepository):
+    async def list(self, filter_query: IBaseFilter):
+        conditions = await self.get_conditions(filter_query)
+        query = await self.build_query(conditions)
+        results = await self.execute_query(query)
+        return await self.get_items(results)
