@@ -5,7 +5,7 @@ from galery_api.presentation.serializers import ArtworkOutput
 from galery_api.domain.models import User
 from galery_api.presentation.serializers import UserInput
 
-from core.domain.mappers import IBaseMapper
+from core.core_base.domain.mappers import IBaseMapper
 
 
 class ArtworkMapper(IBaseMapper):

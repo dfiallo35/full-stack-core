@@ -2,7 +2,7 @@ from abc import ABC
 from abc import abstractmethod
 from typing import List
 
-from core.domain.filters import IBaseFilter
+from core.core_base.domain.filters import IBaseFilter
 
 class IBaseMapper(ABC):    
     @abstractmethod

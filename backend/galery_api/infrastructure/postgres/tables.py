@@ -1,7 +1,7 @@
 from sqlalchemy import Column
 from sqlalchemy import String
 
-from core.infrastructure.postgres.tables import BaseTable
+from core.core_postgres.infrastructure.postgres.tables import BaseTable
 
 
 class ArtworkTable(BaseTable):

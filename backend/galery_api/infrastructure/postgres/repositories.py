@@ -5,12 +5,12 @@ from galery_api.infrastructure.postgres.tables import UserTable
 from galery_api.infrastructure.postgres.mappers import ArtworkFilterMapper
 from galery_api.infrastructure.postgres.mappers import UserFilterMapper
 
-from core.infrastructure.postgres.repositories import CreateRepository
-from core.infrastructure.postgres.repositories import UpdateRepository
-from core.infrastructure.postgres.repositories import ListRepository
-from core.infrastructure.postgres.repositories import GetRepository
-from core.infrastructure.postgres.repositories import DeleteRepository
-from core.infrastructure.postgres.mappers import IBaseFilterMapper
+from core.core_postgres.infrastructure.postgres.repositories import CreateRepository
+from core.core_postgres.infrastructure.postgres.repositories import UpdateRepository
+from core.core_postgres.infrastructure.postgres.repositories import ListRepository
+from core.core_postgres.infrastructure.postgres.repositories import GetRepository
+from core.core_postgres.infrastructure.postgres.repositories import DeleteRepository
+from core.core_base.infrastructure.mappers import IBaseFilterMapper
 
 
 class IArtworkRepository(

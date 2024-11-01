@@ -3,10 +3,10 @@ from abc import abstractmethod
 from typing import List
 from typing import Dict
 
-from core.domain.models import BaseEntity
-from core.domain.filters import IBaseFilter
-from core.infrastructure.postgres.mappers import IBaseMapper
-from core.infrastructure.postgres.repositories import IBaseRepository
+from core.core_base.domain.models import BaseEntity
+from core.core_base.domain.filters import IBaseFilter
+from core.core_base.infrastructure.mappers import IBaseMapper
+from core.core_postgres.infrastructure.postgres.repositories import IBaseRepository
 
 
 class IBaseService(ABC):

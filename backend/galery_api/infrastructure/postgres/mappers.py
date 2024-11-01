@@ -5,8 +5,8 @@ from galery_api.domain.filters import UserFilter
 from galery_api.infrastructure.postgres.tables import ArtworkTable
 from galery_api.infrastructure.postgres.tables import UserTable
 
-from core.infrastructure.postgres.mappers import IBaseMapper
-from core.infrastructure.postgres.mappers import IBaseFilterMapper
+from core.core_base.infrastructure.mappers import IBaseMapper
+from core.core_base.infrastructure.mappers import IBaseFilterMapper
 
 
 class ArtworkMapper(IBaseMapper):

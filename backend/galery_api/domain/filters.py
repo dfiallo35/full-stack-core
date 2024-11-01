@@ -1,7 +1,7 @@
 from typing import Optional
 from typing import List
 
-from core.domain.filters import IPaginationBaseFilter
+from core.core_base.domain.filters import IPaginationBaseFilter
 
 
 class ArtworkFilter(IPaginationBaseFilter):

@@ -9,11 +9,11 @@ from sqlalchemy import delete
 from sqlalchemy import update
 
 # TODO: fix db connection
-from core.infrastructure.postgres.database import DataBase
-from core.infrastructure.postgres.tables import BaseTable
-from core.domain.filters import IBaseFilter
-from core.domain.filters import IPaginationBaseFilter
-from core.infrastructure.postgres.mappers import IBaseFilterMapper
+from core.core_postgres.infrastructure.postgres.database import DataBase
+from core.core_postgres.infrastructure.postgres.tables import BaseTable
+from core.core_base.domain.filters import IBaseFilter
+from core.core_base.domain.filters import IPaginationBaseFilter
+from core.core_base.infrastructure.mappers import IBaseFilterMapper
 
 
 DATABASE_URL = config("DATABASE_URL", "")

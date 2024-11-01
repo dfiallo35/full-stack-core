@@ -1,4 +1,4 @@
-from core.domain.models import BaseEntity
+from core.core_base.domain.models import BaseEntity
 
 
 class Artwork(BaseEntity):

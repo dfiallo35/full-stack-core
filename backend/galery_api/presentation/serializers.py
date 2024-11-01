@@ -1,6 +1,6 @@
 from typing import Optional
 
-from core.domain.models import BaseEntity
+from core.core_base.domain.models import BaseEntity
 
 
 class ArtworkInput(BaseEntity):
