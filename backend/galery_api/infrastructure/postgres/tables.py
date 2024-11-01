@@ -8,3 +8,9 @@ class ArtworkTable(BaseTable):
     __tablename__ = "artworks"
     title: str = Column(String(100))
     description: str = Column(String(500))
+
+
+class UserTable(BaseTable):
+    __tablename__ = "users"
+    username = Column(String, unique=True, index=True, nullable=False)
+    hashed_password = Column(String, nullable=False)

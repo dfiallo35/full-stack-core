@@ -1,6 +1,8 @@
 import inject
 from galery_api.infrastructure.postgres.repositories import ArtworkRepository
-from galery_api.infrastructure.postgres.mappers import ArtworkDataBaseMapper
+from galery_api.infrastructure.postgres.repositories import UserRepository
+from galery_api.infrastructure.postgres.mappers import ArtworkMapper
+from galery_api.infrastructure.postgres.mappers import UserMapper
 
 from core.application.services import CreateService
 from core.application.services import UpdateService
@@ -19,8 +21,23 @@ class IArtworkService(
     GetService
 ):
     repository: IBaseRepository = inject.attr(ArtworkRepository)
-    mapper: IBaseMapper = inject.attr(ArtworkDataBaseMapper)
+    mapper: IBaseMapper = inject.attr(ArtworkMapper)
 
 
 class ArtworkService(IArtworkService):
+    pass
+
+
+class IUserService(
+    CreateService,
+    UpdateService,
+    ListService,
+    DeleteService,
+    GetService
+):
+    repository: IBaseRepository = inject.attr(UserRepository)
+    mapper: IBaseMapper = inject.attr(UserMapper)
+
+
+class UserService(IUserService):
     pass
