@@ -1,8 +1,8 @@
 ### Health
-GET http://localhost:8000/api/v1/health
+GET http://localhost:8080/api/v1/health
 
 ### Create
-POST http://localhost:8000/api/v1/artwork
+POST http://localhost:8080/api/v1/artwork
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb2huZG9lIiwiZXhwIjoxNzMwNDM1MjM0fQ.HXkbYzYRi8K0LmoW6zIGM6mFVxI0ekiBd3dtQm8Ru9w
 
@@ -13,20 +13,20 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb2huZG9lI
 
 
 ### List
-GET http://localhost:8000/api/v1/artwork
+GET http://localhost:8080/api/v1/artwork
 
 
 ### Get
-GET http://localhost:8000/api/v1/artwork/f12f900c-1459-4694-abea-d9709951d96f
+GET http://localhost:8080/api/v1/artwork/f12f900c-1459-4694-abea-d9709951d96f
 
 
 ### Delete
-DELETE http://localhost:8000/api/v1/artwork/98afe6e3-ea0b-4d92-a504-0fc44f5e4584
+DELETE http://localhost:8080/api/v1/artwork/98afe6e3-ea0b-4d92-a504-0fc44f5e4584
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb2huZG9lIiwiZXhwIjoxNzMwNDM1MjM0fQ.HXkbYzYRi8K0LmoW6zIGM6mFVxI0ekiBd3dtQm8Ru9w
 
 
 ### Update
-PATCH http://localhost:8000/api/v1/artwork/08b7a0fe-fa30-46df-b10b-feb089f7fc25
+PATCH http://localhost:8080/api/v1/artwork/08b7a0fe-fa30-46df-b10b-feb089f7fc25
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb2huZG9lIiwiZXhwIjoxNzMwNDM1MjM0fQ.HXkbYzYRi8K0LmoW6zIGM6mFVxI0ekiBd3dtQm8Ru9w
 
@@ -36,14 +36,14 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb2huZG9lI
 
 
 ### Login
-POST http://127.0.0.1:8000/api/v1/login
+POST http://127.0.0.1:8080/api/v1/login
 Content-Type: application/x-www-form-urlencoded
 
 username=johndoe&password=secret
 
 
 ### Signup
-POST http://127.0.0.1:8000/api/v1/signup
+POST http://127.0.0.1:8080/api/v1/signup
 Content-Type: application/json
 
 {
