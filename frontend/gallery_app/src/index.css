@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.flex-content {
+    @apply flex flex-col min-h-screen;
+}
+
+.content {
+    @apply flex-grow;
+    max-width: 1280px;
+    margin: auto;
+}
+
+/* a {
+    font-family: "GillSansWGL", "Gill Sans WGL Regular", "Gill Sans MT", "Gill Sans", GillSans, Calibri, sans-serif;
+} */
+
+/* variables for color palette */
+:root {
+    --primary-color: #001F3F;
+    --secondary-color: #ffffff;
+}
+
+.bg-primary {
+    background-color: var(--primary-color);
+}
+
+.text-primary {
+    color: var(--primary-color);
+}
+
+.text-secondary {
+    color: var(--secondary-color);
+}
