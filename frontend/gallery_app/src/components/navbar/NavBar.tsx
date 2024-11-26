@@ -10,27 +10,20 @@ export default function NavBar() {
     };
     
     return (
-        <div className="bg-white w-full border-b-[1px] border-slate-300 sticky top-0 z-50">
+        <div className="bg-white w-full border-b-[1px] border-slate-300 sticky top-0 z-40">
             <nav className="py-4 px-6 container mx-auto">
                 <div className="flex flex-row justify-between items-center">
                     {/* Logo or Brand Name */}
-                    <Link to="/">
-                        <a href="/" className="text-white font-bold text-3xl my-2">
-                            <img src="/logo.png" alt="logo" className="h-10 w-auto" />
-                        </a>
+                    <Link to="/" className="text-white font-bold text-3xl my-2">
+                        <img src="/logo.png" alt="logo" className="h-10 w-auto" />
                     </Link>
 
                     {/* Navigation Links */}
                     <div className="hidden md:flex md:flex-row flex-col md:space-x-4 md:mt-0 mt-4 items-center text-xl">
-                        <Link to="/">
-                            <a className="text-black font-bold text-xl px-4 py-2 hover:text-red-400" href="/">Home</a>
-                        </Link>
-                        <Link to="/gallery">
-                            <a className="text-black font-bold text-xl px-4 py-2 hover:text-red-400" href="/gallery">Gallery</a>
-                        </Link>
-                        <Link to="/about">
-                            <a className="text-black font-bold text-xl px-4 py-2 hover:text-red-400" href="/about">About</a>
-                        </Link>
+                        <Link to="/" className="text-black font-bold text-xl px-4 py-2 hover:text-red-400">Home</Link>
+                        <Link to="/gallery" className="text-black font-bold text-xl px-4 py-2 hover:text-red-400">Gallery</Link>
+                        <Link to="/about" className="text-black font-bold text-xl px-4 py-2 hover:text-red-400">About</Link>
+                        <Link to="/contact" className="text-black font-bold text-xl px-4 py-2 hover:text-red-400">Contact</Link>
                     </div>
 
                     {/* Sidebar Toggle Button*/}
@@ -59,19 +52,14 @@ export default function NavBar() {
                 isOpen && 
                  <div className="md:hidden absolute bg-white border-r-2 text-white w-auto h-screen top-0 left-0 z-10 p-4 flex flex-col justify-between transition-transform transform translate-x-0 duration-300 ease-in-out">
                     <div className="px-4">
-                        <Link to="/"><a href="/" className="text-white font-bold text-3xl">
+                        <Link to="/" className="text-white font-bold text-3xl">
                             <img src="/logo.png" alt="logo" className="h-10 w-auto" />
-                        </a></Link>
+                        </Link>
                         <ul className="mt-20">
-                            <Link to="/">
-                                <a className="block text-black font-bold text-xl py-2 hover:text-red-400" href="/">Home</a>
-                            </Link>
-                            <Link to="/gallery">
-                                <a className="block text-black font-bold text-xl py-2 hover:text-red-400" href="/gallery">Gallery</a>
-                            </Link>
-                            <Link to="/about">
-                                <a className="block text-black font-bold text-xl py-2 hover:text-red-400" href="/about">About</a>
-                            </Link>
+                            <Link to="/" className="block text-black font-bold text-xl py-2 hover:text-red-400">Home</Link>
+                            <Link to="/gallery" className="block text-black font-bold text-xl py-2 hover:text-red-400">Gallery</Link>
+                            <Link to="/about" className="block text-black font-bold text-xl py-2 hover:text-red-400">About</Link>
+                            <Link to="/contact" className="block text-black font-bold text-xl py-2 hover:text-red-400">Contact</Link>
                         </ul>
                     </div>
                 </div>
