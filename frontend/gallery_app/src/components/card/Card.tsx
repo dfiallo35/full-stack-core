@@ -8,7 +8,7 @@ interface CardProps {
 export default function Card({image}: CardProps) {
     return (
         <div className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl" key={image.id}>
-            <img className="h-80 w-full object-cover rounded-t-xl" alt={image.title} src={image.image}/>
+            <img className="h-80 w-full object-cover rounded-t-xl" alt={image.title} src={image.thumbnail}/>
             <div className="px-4 py-3 w-full">
                 <h2 className="text-lg font-semibold text-black cursor-auto my-3">{image.title}</h2>
                 <p className="text-sm mt-2 text-gray-800 leading-relaxed">{image.description}</p>
